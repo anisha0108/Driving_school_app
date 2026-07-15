@@ -14,6 +14,8 @@ class _StudentListScreenState extends State<StudentListScreen> {
 
   String searchText = "";
   String selectedInstructor = "All";
+  String selectedFeeFilter = "All";
+  String selectedStatusFilter = "All";
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +115,68 @@ class _StudentListScreenState extends State<StudentListScreen> {
               },
             ),
           ),
+          const SizedBox(height: 10),
+
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: DropdownButtonFormField<String>(
+              initialValue: selectedFeeFilter,
+              decoration: const InputDecoration(
+                labelText: "Pending Fees",
+                border: OutlineInputBorder(),
+              ),
+              items: const [
+                DropdownMenuItem(
+                  value: "All",
+                  child: Text("All Students"),
+                ),
+                DropdownMenuItem(
+                  value: "Pending",
+                  child: Text("Pending Fees"),
+                ),
+                DropdownMenuItem(
+                  value: "Paid",
+                  child: Text("Paid Students"),
+                ),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  selectedFeeFilter = value!;
+                });
+              },
+            ),
+          ),
+          const SizedBox(height: 10),
+
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: DropdownButtonFormField<String>(
+              initialValue: selectedStatusFilter,
+              decoration: const InputDecoration(
+                labelText: "Student Status",
+                border: OutlineInputBorder(),
+              ),
+              items: const [
+                DropdownMenuItem(
+                  value: "All",
+                  child: Text("All Students"),
+                ),
+                DropdownMenuItem(
+                  value: "Completed",
+                  child: Text("Completed"),
+                ),
+                DropdownMenuItem(
+                  value: "In Progress",
+                  child: Text("In Progress"),
+                ),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  selectedStatusFilter = value!;
+                });
+              },
+            ),
+          ),
 
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
@@ -145,14 +209,9 @@ class _StudentListScreenState extends State<StudentListScreen> {
                 final students = snapshot.data!.docs.where((doc) {
                   final student = doc.data() as Map<String, dynamic>;
 
-                  final name =
-                  (student["name"] ?? "").toString().toLowerCase();
-
-                  final phone =
-                  (student["phone"] ?? "").toString().toLowerCase();
-
-                  final vehicle =
-                  (student["vehicle"] ?? "").toString().toLowerCase();
+                  final name = (student["name"] ?? "").toString().toLowerCase();
+                  final phone = (student["phone"] ?? "").toString().toLowerCase();
+                  final vehicle = (student["vehicle"] ?? "").toString().toLowerCase();
 
                   bool matchesSearch =
                       name.contains(searchText) ||
@@ -163,7 +222,26 @@ class _StudentListScreenState extends State<StudentListScreen> {
                       selectedInstructor == "All" ||
                           student["trainer"] == selectedInstructor;
 
-                  return matchesSearch && matchesInstructor;
+                  int pendingFees =
+                      int.tryParse(student["pendingFees"].toString()) ?? 0;
+
+                  bool matchesFees =
+                      selectedFeeFilter == "All" ||
+                          (selectedFeeFilter == "Pending" && pendingFees > 0) ||
+                          (selectedFeeFilter == "Paid" && pendingFees == 0);
+
+                  bool completed =
+                      student["completed"] ?? false;
+
+                  bool matchesStatus =
+                      selectedStatusFilter == "All" ||
+                          (selectedStatusFilter == "Completed" && completed) ||
+                          (selectedStatusFilter == "In Progress" && !completed);
+
+                  return matchesSearch &&
+                      matchesInstructor &&
+                      matchesFees &&
+                      matchesStatus;
                 }).toList();
 
                 if (students.isEmpty) {
