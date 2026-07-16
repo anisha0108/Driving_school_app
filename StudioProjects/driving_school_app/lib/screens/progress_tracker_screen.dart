@@ -114,21 +114,24 @@ class _ProgressTrackerScreenState extends State<ProgressTrackerScreen> {
 
     value: completed[index],
 
-    onChanged: (value) async {
+      onChanged: (value) async {
+        if (value == null) return;
 
-    if (value == null) return;
+        setState(() {
+          completed[index] = value;
+        });
 
-    setState(() {
-    completed[index] = value;
-    });
+        // Check if all lessons are completed
+        bool courseCompleted = completed.every((lesson) => lesson);
 
-    await FirebaseFirestore.instance
-        .collection("students")
-        .doc(widget.documentId)
-        .update({
-    "progress.day${index + 1}": value,
-    });
-    },
+        await FirebaseFirestore.instance
+            .collection("students")
+            .doc(widget.documentId)
+            .update({
+          "progress.day${index + 1}": value,
+          "completed": courseCompleted,
+        });
+      },
     ),
     );
     },

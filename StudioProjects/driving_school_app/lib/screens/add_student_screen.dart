@@ -47,6 +47,7 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
           "day8": false,
           "day9": false,
           "day10": false,
+          "completed": false,
         },
       });
 

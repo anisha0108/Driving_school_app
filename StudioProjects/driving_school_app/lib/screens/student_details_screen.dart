@@ -247,6 +247,33 @@ class StudentDetailsScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
+                icon: const Icon(Icons.check_circle),
+                label: const Text("Mark as Completed"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: () async {
+                  await FirebaseFirestore.instance
+                      .collection("students")
+                      .doc(documentId)
+                      .update({
+                    "completed": true,
+                  });
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Student marked as completed"),
+                    ),
+                  );
+
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
                 icon: const Icon(Icons.payments),
                 label: const Text("Add Payment"),
                 onPressed: () {
