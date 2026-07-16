@@ -5,6 +5,7 @@ import 'edit_instructor_screen.dart';
 import 'student_list_screen.dart';
 import 'payments_screen.dart';
 import 'instructor_list_screen.dart';
+import 'reports_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -144,6 +145,11 @@ class DashboardScreen extends StatelessWidget {
                     title: "Payments",
                     icon: Icons.account_balance_wallet,
                     screen: PaymentsScreen(),
+                  ),
+                  MenuButton(
+                    title: "Reports",
+                    icon: Icons.bar_chart,
+                    screen: const ReportsScreen(),
                   ),
 
                 ],
