@@ -16,63 +16,42 @@ class EditInstructorScreen extends StatefulWidget {
       _EditInstructorScreenState();
 }
 
-class _EditInstructorScreenState extends State<EditInstructorScreen> {
+class _EditInstructorScreenState
+    extends State<EditInstructorScreen> {
 
-  final nameController = TextEditingController();
-  final phoneController = TextEditingController();
-  final experienceController = TextEditingController();
-  final licenseController = TextEditingController();
-  final addressController = TextEditingController();
-  final vehicleController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+
+  late TextEditingController nameController;
+  late TextEditingController phoneController;
+  late TextEditingController vehicleController;
 
   @override
   void initState() {
     super.initState();
 
-    nameController.text = widget.instructor["name"] ?? "";
-    phoneController.text = widget.instructor["phone"] ?? "";
-    experienceController.text = widget.instructor["experience"] ?? "";
-    licenseController.text = widget.instructor["licenseNo"] ?? "";
-    addressController.text = widget.instructor["address"] ?? "";
-    vehicleController.text = widget.instructor["vehicle"] ?? "";
+    nameController =
+        TextEditingController(text: widget.instructor["name"]);
+
+    phoneController =
+        TextEditingController(text: widget.instructor["phone"]);
+
+    vehicleController =
+        TextEditingController(text: widget.instructor["vehicle"]);
   }
 
   Future<void> updateInstructor() async {
+    if (!formKey.currentState!.validate()) return;
+
     await FirebaseFirestore.instance
         .collection("instructors")
         .doc(widget.documentId)
         .update({
       "name": nameController.text.trim(),
       "phone": phoneController.text.trim(),
-      "experience": experienceController.text.trim(),
-      "licenseNo": licenseController.text.trim(),
-      "address": addressController.text.trim(),
       "vehicle": vehicleController.text.trim(),
     });
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text("Instructor Updated"),
-      ),
-    );
-
     Navigator.pop(context);
-  }
-
-  Widget buildField(
-      TextEditingController controller,
-      String label,
-      ) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 15),
-      child: TextField(
-        controller: controller,
-        decoration: InputDecoration(
-          labelText: label,
-          border: const OutlineInputBorder(),
-        ),
-      ),
-    );
   }
 
   @override
@@ -85,30 +64,43 @@ class _EditInstructorScreenState extends State<EditInstructorScreen> {
         foregroundColor: Colors.white,
       ),
 
-      body: SingleChildScrollView(
+      body: Padding(
         padding: const EdgeInsets.all(16),
 
-        child: Column(
-          children: [
+        child: Form(
+          key: formKey,
 
-            buildField(nameController, "Instructor Name"),
-            buildField(phoneController, "Phone"),
-            buildField(experienceController, "Experience"),
-            buildField(licenseController, "License Number"),
-            buildField(addressController, "Address"),
-            buildField(vehicleController, "Vehicle"),
+          child: Column(
+            children: [
 
-            const SizedBox(height: 20),
+              TextFormField(
+                controller: nameController,
+                decoration:
+                const InputDecoration(labelText: "Name"),
+                validator: (v) =>
+                v!.isEmpty ? "Enter name" : null,
+              ),
 
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
+              TextFormField(
+                controller: phoneController,
+                decoration:
+                const InputDecoration(labelText: "Phone"),
+              ),
+
+              TextFormField(
+                controller: vehicleController,
+                decoration:
+                const InputDecoration(labelText: "Vehicle"),
+              ),
+
+              const SizedBox(height: 25),
+
+              ElevatedButton(
                 onPressed: updateInstructor,
                 child: const Text("Update Instructor"),
               ),
-            ),
-
-          ],
+            ],
+          ),
         ),
       ),
     );

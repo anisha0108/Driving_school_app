@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'add_student_screen.dart';
-import 'edit_instructor_screen.dart';
 import 'student_list_screen.dart';
 import 'payments_screen.dart';
 import 'instructor_list_screen.dart';
 import 'reports_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'login_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -151,6 +152,12 @@ class DashboardScreen extends StatelessWidget {
                     icon: Icons.bar_chart,
                     screen: const ReportsScreen(),
                   ),
+                  MenuButton(
+                    title: "Logout",
+                    icon: Icons.logout,
+                    screen: const LoginScreen(),
+                    isLogout: true,
+                  ),
 
                 ],
               ),
@@ -214,12 +221,14 @@ class MenuButton extends StatelessWidget {
   final String title;
   final IconData icon;
   final Widget screen;
+  final bool isLogout;
 
   const MenuButton({
     super.key,
     required this.title,
     required this.icon,
     required this.screen,
+    this.isLogout = false,
   });
 
   @override
@@ -230,13 +239,25 @@ class MenuButton extends StatelessWidget {
         leading: Icon(icon, color: Colors.blue),
         title: Text(title),
         trailing: const Icon(Icons.arrow_forward_ios),
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => screen,
-            ),
-          );
+        onTap: () async {
+          if (isLogout) {
+            await FirebaseAuth.instance.signOut();
+
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const LoginScreen(),
+              ),
+                  (route) => false,
+            );
+          } else {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => screen,
+              ),
+            );
+          }
         },
       ),
     );

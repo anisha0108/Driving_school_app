@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'add_instructor_screen.dart';
+import 'edit_instructor_screen.dart';
 import 'instructor_details_screen.dart';
+import 'instructor_students_screen.dart';
 
 class InstructorListScreen extends StatelessWidget {
   const InstructorListScreen({super.key});
@@ -94,9 +96,9 @@ class InstructorListScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => InstructorDetailsScreen(
-                          instructor: instructor,
-                          documentId: instructors[index].id,
+                        builder: (_) => InstructorStudentsScreen(
+                          instructorId: instructors[index].id,
+                          instructorName: instructor["name"],
                         ),
                       ),
                     );

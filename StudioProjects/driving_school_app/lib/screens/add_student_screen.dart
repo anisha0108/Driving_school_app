@@ -21,6 +21,7 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
   String? selectedTrainer;
   String? selectedTrainerId;
 
+
   Future<void> saveStudent() async {
     try {
       await FirebaseFirestore.instance.collection('students').add({
@@ -192,13 +193,40 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
 
             const SizedBox(height: 15),
 
-            TextField(
-              controller: trainerController,
-              decoration: const InputDecoration(
-                labelText: "Trainer Name",
-                prefixIcon: Icon(Icons.badge),
-                border: OutlineInputBorder(),
-              ),
+            StreamBuilder<QuerySnapshot>(
+              stream: FirebaseFirestore.instance
+                  .collection("instructors")
+                  .snapshots(),
+              builder: (context, snapshot) {
+
+                if (!snapshot.hasData) {
+                  return const CircularProgressIndicator();
+                }
+
+                return DropdownButtonFormField<String>(
+                  initialValue: selectedTrainerId,
+                  decoration:
+                  const InputDecoration(labelText: "Instructor"),
+
+                  items: snapshot.data!.docs.map((doc) {
+
+                    final data =
+                    doc.data() as Map<String, dynamic>;
+
+                    return DropdownMenuItem(
+                      value: doc.id,
+                      child: Text(data["name"]),
+                    );
+
+                  }).toList(),
+
+                  onChanged: (value) {
+                    setState(() {
+                      selectedTrainerId = value;
+                    });
+                  },
+                );
+              },
             ),
 
             const SizedBox(height: 15),

@@ -185,14 +185,35 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: resetPassword,
+                  onPressed: () async {
+                    if (emailController.text.isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Enter your email first"),
+                        ),
+                      );
+                      return;
+                    }
+
+                    await FirebaseAuth.instance.sendPasswordResetEmail(
+                      email: emailController.text.trim(),
+                    );
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          "Password reset email sent.",
+                        ),
+                      ),
+                    );
+                  },
                   child: const Text("Forgot Password?"),
                 ),
               ),
+
 
               const SizedBox(height: 20),
 
