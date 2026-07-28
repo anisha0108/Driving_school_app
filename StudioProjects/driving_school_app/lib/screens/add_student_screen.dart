@@ -182,13 +182,43 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
 
             const SizedBox(height: 15),
 
-            TextField(
-              controller: joiningDateController,
-              decoration: const InputDecoration(
-                labelText: "Joining Date",
-                prefixIcon: Icon(Icons.calendar_today),
-                border: OutlineInputBorder(),
-              ),
+            StreamBuilder<QuerySnapshot>(
+              stream: FirebaseFirestore.instance
+                  .collection("instructors")
+                  .snapshots(),
+              builder: (context, snapshot) {
+
+                if (!snapshot.hasData) {
+                  return const CircularProgressIndicator();
+                }
+
+                return DropdownButtonFormField<String>(
+
+                  initialValue: selectedTrainerId,
+
+                  decoration: const InputDecoration(
+                    labelText: "Instructor",
+                  ),
+
+                  items: snapshot.data!.docs.map((doc) {
+
+                    final instructor =
+                    doc.data() as Map<String, dynamic>;
+
+                    return DropdownMenuItem<String>(
+                      value: doc.id,
+                      child: Text(instructor["name"]),
+                    );
+
+                  }).toList(),
+
+                  onChanged: (value) {
+                    setState(() {
+                      selectedTrainerId = value;
+                    });
+                  },
+                );
+              },
             ),
 
             const SizedBox(height: 15),

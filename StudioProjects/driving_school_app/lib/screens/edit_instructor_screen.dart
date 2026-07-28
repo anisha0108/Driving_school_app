@@ -19,7 +19,7 @@ class EditInstructorScreen extends StatefulWidget {
 class _EditInstructorScreenState
     extends State<EditInstructorScreen> {
 
-  final formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   late TextEditingController nameController;
   late TextEditingController phoneController;
@@ -40,7 +40,7 @@ class _EditInstructorScreenState
   }
 
   Future<void> updateInstructor() async {
-    if (!formKey.currentState!.validate()) return;
+    if (!_formKey.currentState!.validate()) return;
 
     await FirebaseFirestore.instance
         .collection("instructors")
@@ -68,36 +68,46 @@ class _EditInstructorScreenState
         padding: const EdgeInsets.all(16),
 
         child: Form(
-          key: formKey,
+          key: _formKey,
 
           child: Column(
             children: [
 
               TextFormField(
                 controller: nameController,
-                decoration:
-                const InputDecoration(labelText: "Name"),
-                validator: (v) =>
-                v!.isEmpty ? "Enter name" : null,
+                decoration: const InputDecoration(
+                  labelText: "Instructor Name",
+                ),
+                validator: (value) =>
+                value!.isEmpty ? "Enter name" : null,
               ),
+
+              const SizedBox(height: 15),
 
               TextFormField(
                 controller: phoneController,
-                decoration:
-                const InputDecoration(labelText: "Phone"),
+                decoration: const InputDecoration(
+                  labelText: "Phone Number",
+                ),
               ),
+
+              const SizedBox(height: 15),
 
               TextFormField(
                 controller: vehicleController,
-                decoration:
-                const InputDecoration(labelText: "Vehicle"),
+                decoration: const InputDecoration(
+                  labelText: "Vehicle",
+                ),
               ),
 
-              const SizedBox(height: 25),
+              const SizedBox(height: 30),
 
-              ElevatedButton(
-                onPressed: updateInstructor,
-                child: const Text("Update Instructor"),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: updateInstructor,
+                  child: const Text("Update Instructor"),
+                ),
               ),
             ],
           ),

@@ -96,13 +96,55 @@ class InstructorListScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => InstructorStudentsScreen(
-                          instructorId: instructors[index].id,
-                          instructorName: instructor["name"],
+                        builder: (_) => EditInstructorScreen(
+                          documentId: instructors[index].id,
+                          instructor: instructor,
                         ),
                       ),
                     );
                   },
+                  trailing: IconButton(
+                    icon: const Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                    ),
+                    onPressed: () async {
+
+                      bool? delete = await showDialog(
+                        context: context,
+                        builder: (_) => AlertDialog(
+                          title: const Text("Delete Instructor"),
+                          content: const Text(
+                            "Delete this instructor?",
+                          ),
+                          actions: [
+
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context, false);
+                              },
+                              child: const Text("Cancel"),
+                            ),
+
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context, true);
+                              },
+                              child: const Text("Delete"),
+                            ),
+
+                          ],
+                        ),
+                      );
+
+                      if (delete == true) {
+                        await FirebaseFirestore.instance
+                            .collection("instructors")
+                            .doc(instructors[index].id)
+                            .delete();
+                      }
+                    },
+                  ),
                 ),
               );
             },
