@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Certificate Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Certify<span>Pro</span></div>
+
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Events</a>
+            <a href="#">Certificates</a>
+        </nav>
+
+        <button class="admin-btn">Admin</button>
+    </header>
+
+
+    <main class="container">
+
+        <section class="page-heading">
+            <h1>Certificate Generator</h1>
+            <p>Create professional e-certificates for your events.</p>
+        </section>
+
+
+        <section class="generator">
+
+            <!-- LEFT SIDE -->
+            <div class="form-card">
+
+                <h2>Certificate Details</h2>
+                <p class="subtitle">Enter participant information</p>
+
+                <label>Participant Name</label>
+                <input
+                    type="text"
+                    id="participantName"
+                    placeholder="Enter participant name"
+                >
+
+                <label>Event Name</label>
+                <input
+                    type="text"
+                    id="eventName"
+                    placeholder="Enter event name"
+                >
+
+                <label>Certificate Type</label>
+                <select id="certificateType">
+                    <option>Certificate of Participation</option>
+                    <option>Certificate of Completion</option>
+                    <option>Certificate of Achievement</option>
+                    <option>Certificate of Excellence</option>
+                </select>
+
+                <label>Event Date</label>
+                <input type="date" id="eventDate">
+
+                <label>Organizer Name</label>
+                <input
+                    type="text"
+                    id="organizerName"
+                    placeholder="Enter organizer name"
+                >
+
+                <label>Certificate ID</label>
+                <input
+                    type="text"
+                    id="certificateId"
+                    placeholder="CERT-2026-001"
+                >
+
+                <button class="generate-btn" onclick="generateCertificate()">
+                    Generate Certificate
+                </button>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <div class="preview-card">
+
+                <div class="preview-header">
+                    <h2>Certificate Preview</h2>
+                    <span>LIVE PREVIEW</span>
+                </div>
+
+                <div class="certificate" id="certificate">
+
+                    <div class="certificate-border">
+
+                        <div class="certificate-content">
+
+                            <div class="certificate-logo">
+                                CERTIFY<span>PRO</span>
+                            </div>
+
+                            <p class="small-title">CERTIFICATE OF</p>
+
+                            <h1 id="previewType">
+                                PARTICIPATION
+                            </h1>
+
+                            <p class="presented">
+                                This certificate is proudly presented to
+                            </p>
+
+                            <h2 id="previewName">
+                                Your Name
+                            </h2>
+
+                            <p class="description">
+                                for successfully participating in
+                            </p>
+
+                            <h3 id="previewEvent">
+                                Your Event Name
+                            </h3>
+
+                            <p id="previewDate">
+                                Event Date
+                            </p>
+
+                            <div class="certificate-bottom">
+
+                                <div>
+                                    <div class="signature-line"></div>
+                                    <p id="previewOrganizer">
+                                        Organizer
+                                    </p>
+                                    <small>Organizer</small>
+                                </div>
+
+                                <div class="certificate-id">
+                                    <strong>Certificate ID</strong>
+                                    <p id="previewId">CERT-2026-001</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="download-btn">
+                    Download Certificate
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

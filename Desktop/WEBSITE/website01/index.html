@@ -1,389 +1,1554 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shetall Driving School</title>
 
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+    <title>Shetall Driving School | Baramati</title>
 
-body{
-background:#f4f6f9;
-color:#333;
-}
+    <meta name="description"
+        content="Shetall Driving School Baramati - 2 Wheeler, 3 Wheeler and 4 Wheeler Driving Classes with Licence Assistance. 20 Days Course and RTO Test Preparation.">
 
-header{
-background:#003366;
-color:white;
-padding:30px;
-text-align:center;
-}
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-header h1{
-font-size:40px;
-}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-header p{
-font-size:18px;
-margin-top:10px;
-}
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-padding:30px 0;
-}
-
-section{
-background:white;
-margin-bottom:25px;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,.1);
-}
-
-h2{
-color:#003366;
-margin-bottom:15px;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:15px;
-}
-
-table th,
-table td{
-border:1px solid #ccc;
-padding:12px;
-}
-
-table th{
-background:#003366;
-color:white;
-}
-
-ul{
-padding-left:20px;
-}
-
-li{
-margin-bottom:10px;
-}
-
-footer{
-background:#003366;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:30px;
-}
-
-</style>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-<header>
 
-<h1>🚗 SHETALL DRIVING SCHOOL</h1>
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-<p>Learn Safe Driving with Confidence</p>
+<header class="navbar">
+
+    <div class="logo">
+
+        <span class="logo-icon">
+            <i class="fa-solid fa-car"></i>
+        </span>
+
+        <div>
+            <h2>SHETALL</h2>
+            <small>DRIVING SCHOOL</small>
+        </div>
+
+    </div>
+
+
+    <nav id="navMenu">
+
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#vehicles">Vehicles</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#feedback">Feedback</a>
+
+    </nav>
+
+
+    <!-- Mobile Menu Button -->
+    <button
+        class="menu-btn"
+        type="button"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
 
 </header>
 
-<div class="container">
 
-<section>
 
-<h2>📞 Contact Information</h2>
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<p><strong>Driving School :</strong> Shetall Kothari</p>
+<section id="home" class="hero">
 
-<p><strong>Phone :</strong> 9850905091</p>
+    <div class="hero-overlay"></div>
 
-<p><strong>Address :</strong> Market Yard, Baramati, Maharashtra</p>
 
-</section>
+    <div class="hero-content">
 
-<section>
+        <div class="badge">
 
-<h2>🚘 Our Services</h2>
+            <i class="fa-solid fa-certificate"></i>
 
-<ul>
+            Professional Driving Training
 
-<li>Two Wheeler Training</li>
+        </div>
 
-<li>Four Wheeler Training</li>
 
-<li>Learner License Assistance</li>
+        <h1>
 
-<li>Permanent Driving License Assistance</li>
+            LEARN TO DRIVE.<br>
 
-<li>RTO Test Preparation</li>
+            <span>DRIVE WITH CONFIDENCE.</span>
 
-<li>Road Safety Education</li>
+        </h1>
 
-<li>Refresher Driving Classes</li>
 
-</ul>
+        <p>
 
-</section>
+            Professional 2, 3 & 4-Wheeler driving classes
+            with Licence assistance in Baramati.
 
-<section>
+        </p>
 
-<h2>📄 Required Documents</h2>
 
-<ul>
+        <div class="hero-buttons">
 
-<li>Aadhaar Card</li>
+            <a href="#courses" class="btn primary-btn">
 
-<li>PAN Card</li>
+                <i class="fa-solid fa-road"></i>
 
-<li>Existing Driving License (2 Wheeler / 4 Wheeler if available)</li>
+                Explore Courses
 
-<li>Passport Size Photos</li>
+            </a>
 
-<li>Mobile Number</li>
 
-</ul>
+            <a href="tel:9689863144" class="btn outline-btn">
 
-</section>
+                <i class="fa-solid fa-phone"></i>
 
-<section>
+                Call Now
 
-<h2>📘 20 Days Driving Schedule</h2>
+            </a>
 
-<table>
+        </div>
 
-<tr>
 
-<th>Day</th>
+        <div class="hero-features">
 
-<th>Lesson</th>
 
-</tr>
+            <div>
 
-<tr><td>Day 1</td><td>Introduction to Car/Bike, Vehicle Parts, Dashboard, Seating Position & Safety</td></tr>
+                <i class="fa-solid fa-calendar-days"></i>
 
-<tr><td>Day 2</td><td>Steering Handling, Vehicle Control and Balance</td></tr>
+                <strong>20 Days</strong>
 
-<tr><td>Day 3</td><td>Starting Vehicle, Clutch, Brake & Accelerator Practice</td></tr>
+                <span>Complete Course</span>
 
-<tr><td>Day 4</td><td>Gear Shifting Practice</td></tr>
+            </div>
 
-<tr><td>Day 5</td><td>Straight Road Driving</td></tr>
 
-<tr><td>Day 6</td><td>Left & Right Turns</td></tr>
+            <div>
 
-<tr><td>Day 7</td><td>Mirror Usage & Reverse Driving</td></tr>
+                <i class="fa-solid fa-id-card"></i>
 
-<tr><td>Day 8</td><td>Parking Practice</td></tr>
+                <strong>Licence</strong>
 
-<tr><td>Day 9</td><td>Hill Start Practice</td></tr>
+                <span>Training Support</span>
 
-<tr><td>Day 10</td><td>Traffic Signals & Road Signs</td></tr>
+            </div>
 
-<tr><td>Day 11</td><td>Driving in Light Traffic</td></tr>
 
-<tr><td>Day 12</td><td>Driving in Heavy Traffic</td></tr>
+            <div>
 
-<tr><td>Day 13</td><td>U-Turn & Roundabout</td></tr>
+                <i class="fa-solid fa-book"></i>
 
-<tr><td>Day 14</td><td>Lane Discipline</td></tr>
+                <strong>RTO</strong>
 
-<tr><td>Day 15</td><td>Emergency Braking</td></tr>
+                <span>Test Preparation</span>
 
-<tr><td>Day 16</td><td>Highway Driving Basics</td></tr>
+            </div>
 
-<tr><td>Day 17</td><td>Night Driving Awareness</td></tr>
 
-<tr><td>Day 18</td><td>Complete Practical Revision</td></tr>
+        </div>
 
-<tr><td>Day 19</td><td>Mock Driving Test</td></tr>
-
-<tr><td>Day 20</td><td>Final Practical Assessment & Confidence Building</td></tr>
-
-</table>
+    </div>
 
 </section>
 
-<section>
 
-<h2>📚 Theory Lectures</h2>
 
-<table>
+<!-- =====================================================
+     STATS
+===================================================== -->
 
-<tr>
+<section class="stats">
 
-<th>Lecture</th>
 
-<th>Topics</th>
+    <div class="stat-box">
 
-</tr>
+        <i class="fa-solid fa-motorcycle"></i>
 
-<tr>
+        <h3>2 Wheeler</h3>
 
-<td>Lecture 1</td>
+        <p>Complete Training</p>
 
-<td>Traffic Rules, Road Signs, Lane Discipline, Speed Limits and Safe Driving</td>
+    </div>
 
-</tr>
 
-<tr>
+    <div class="stat-box">
 
-<td>Lecture 2</td>
+        <i class="fa-solid fa-taxi"></i>
 
-<td>Vehicle Maintenance, Defensive Driving, Fuel Saving Tips, Emergency Situations & RTO Test Guidance</td>
+        <h3>3 Wheeler</h3>
 
-</tr>
+        <p>Complete Training</p>
 
-</table>
+    </div>
 
-</section>
 
-<section>
+    <div class="stat-box">
 
-<h2>⭐ Why Choose Us?</h2>
+        <i class="fa-solid fa-car"></i>
 
-<ul>
+        <h3>4 Wheeler</h3>
 
-<li>Experienced Driving Instructor</li>
+        <p>Complete Training</p>
 
-<li>Individual Attention</li>
+    </div>
 
-<li>20 Days Complete Practical Training</li>
 
-<li>Professional Guidance</li>
+    <div class="stat-box">
 
-<li>Affordable Fees</li>
+        <i class="fa-solid fa-file-circle-check"></i>
 
-<li>100% RTO Guidance</li>
+        <h3>RTO Ready</h3>
 
-<li>Safe Driving Techniques</li>
+        <p>Test Preparation</p>
 
-</ul>
+    </div>
+
 
 </section>
 
-<section>
 
-<h2>💰 Fee Structure</h2>
 
-<table>
+<!-- =====================================================
+     COURSES
+===================================================== -->
 
-<tr>
+<section id="courses" class="section">
 
-<th>Course</th>
 
-<th>Duration</th>
+    <div class="section-heading">
 
-<th>Includes</th>
+        <span>OUR COURSES</span>
 
-<th>Fees</th>
+        <h2>
+            Choose Your <strong>Driving Course</strong>
+        </h2>
 
-</tr>
+        <p>
+            Learn safely, confidently and professionally
+            with our structured driving courses.
+        </p>
 
-<tr>
+    </div>
 
-<td>Two Wheeler Course</td>
 
-<td>20 Days</td>
 
-<td>
+    <div class="course-container">
 
-✔ Practical Training<br>
 
-✔ 2 Theory Lectures<br>
+        <!-- ================= 4 WHEELER ================= -->
 
-✔ Learner License Assistance<br>
+        <div class="course-card featured">
 
-✔ Permanent License Assistance
+            <div class="popular">
+                MOST POPULAR
+            </div>
 
-</td>
 
-<td><strong>₹5,000/-</strong></td>
+            <div class="course-icon">
 
-</tr>
+                <i class="fa-solid fa-car"></i>
 
-<tr>
+            </div>
 
-<td>Four Wheeler Course</td>
 
-<td>20 Days</td>
+            <h3>
+                4 Wheeler Driving Course
+            </h3>
 
-<td>
 
-✔ Practical Training<br>
+            <div class="price">
+                <span>Starts With</span>
+            </div>
 
-✔ 2 Theory Lectures<br>
 
-✔ Learner License Assistance<br>
+            <p class="course-subtitle">
+                Choose the package that suits you
+            </p>
 
-✔ Permanent License Assistance<br>
 
-✔ RTO Test Preparation
+            <ul>
 
-</td>
 
-<td><strong>₹8,000/-</strong></td>
+                <li>
 
-</tr>
+                    <i class="fa-solid fa-check"></i>
 
-</table>
+                    5000/- Driving Training Only
 
-<br>
+                </li>
 
-<h3>Course Includes</h3>
 
-<ul>
+                <li>
 
-<li>20 Days Practical Driving</li>
+                    <i class="fa-solid fa-check"></i>
 
-<li>2 Theory Lectures</li>
+                    6000/- Driving Training + Licence
 
-<li>Learner License Assistance</li>
+                </li>
 
-<li>Permanent Driving License Assistance</li>
 
-<li>RTO Test Preparation</li>
+                <li>
 
-<li>Professional Instructor Support</li>
+                    <i class="fa-solid fa-check"></i>
 
-</ul>
+                    7000/- Driving Training + Licence
+                    + Two Wheeler Licence
 
-<p style="color:red;font-weight:bold;margin-top:15px;">
+                </li>
 
-*Fees are subject to change according to RTO rules.*
 
-</p>
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    8000/- Driving Training + Licence
+                    + Two Wheeler Licence
+                    + Diveghat and Bhigwan Batch
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Diamond Course
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    10,000/- 15 Days Driving Training
+                    — 1 Hour Per Day
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    2 Theory Lectures
+
+                </li>
+
+
+            </ul>
+
+
+            <a href="tel:9689863144" class="course-btn">
+
+                Enquire Now
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= 2 WHEELER ================= -->
+
+        <div class="course-card">
+
+
+            <div class="course-icon">
+
+                <i class="fa-solid fa-motorcycle"></i>
+
+            </div>
+
+
+            <h3>
+                2 Wheeler Driving Course
+            </h3>
+
+
+            <div class="price">
+                <span>Starts With</span>
+            </div>
+
+
+            <p class="course-subtitle">
+                Choose the package that suits you
+            </p>
+
+
+            <ul>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    2500/- 10 Days Training
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    5000/- Training + Licence
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    10 Days Practical Training
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Training on Your Vehicle
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    2 Theory Lectures
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    RTO Test Preparation
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Licence Assistance
+
+                </li>
+
+
+            </ul>
+
+
+            <a href="tel:9689863144" class="course-btn">
+
+                Enquire Now
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ================= 3 WHEELER ================= -->
+
+        <div class="course-card featured">
+
+
+            <div class="course-icon">
+
+                <i class="fa-solid fa-taxi"></i>
+
+            </div>
+
+
+            <h3>
+                3 Wheeler Driving Course
+            </h3>
+
+
+            <p class="course-subtitle">
+
+                Free Training with Free Licence
+
+            </p>
+
+
+            <ul>
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Complete 3 Wheeler Training
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Licence Assistance
+
+                </li>
+
+
+                <li>
+
+                    <i class="fa-solid fa-check"></i>
+
+                    RTO Test Preparation
+
+                </li>
+
+            </ul>
+
+
+            <a href="tel:9689863144" class="course-btn">
+
+                Enquire Now
+
+            </a>
+
+        </div>
+
+
+    </div>
 
 </section>
 
-</div>
+
+
+<!-- =====================================================
+     VEHICLES
+===================================================== -->
+
+<section id="vehicles" class="vehicles-section">
+
+
+    <div class="section-heading light">
+
+        <span>OUR VEHICLES</span>
+
+        <h2>
+            Learn With <strong>Reliable Vehicles</strong>
+        </h2>
+
+        <p>
+
+            Get practical experience with different
+            types of two-wheelers, three-wheelers
+            and four-wheelers.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="vehicle-grid">
+
+
+        <!-- ================= ERTIGA ================= -->
+
+        <div class="vehicle-card">
+
+
+            <div class="vehicle-image">
+
+                <img
+                    src="images/ertigasuzuki.jpeg"
+                    alt="Maruti Suzuki Ertiga Driving Training"
+                    loading="lazy">
+
+            </div>
+
+
+            <div class="vehicle-info">
+
+                <span>4 WHEELER</span>
+
+                <h3>
+                    Maruti Ertiga
+                </h3>
+
+                <p>
+                    Professional 4-wheeler
+                    driving training.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= SWIFT ================= -->
+
+        <div class="vehicle-card">
+
+
+            <div class="vehicle-image">
+
+                <img
+                    src="images/dizersuzuki.jpeg"
+                    alt="Maruti Suzuki Swift Automatic Driving Training"
+                    loading="lazy">
+
+            </div>
+
+
+            <div class="vehicle-info">
+
+                <span>4 WHEELER</span>
+
+                <h3>
+                    Maruti Swift
+                </h3>
+
+                <p>
+                    Learn confident and safe
+                    car driving.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= RICKSHAW ================= -->
+
+        <div class="vehicle-card">
+
+
+            <div class="vehicle-image">
+
+                <img
+                    src="images/rickshaw.jpeg"
+                    alt="Rickshaw Driving Training"
+                    loading="lazy">
+
+            </div>
+
+
+            <div class="vehicle-info">
+
+                <span>3 WHEELER</span>
+
+                <h3>
+                    Rickshaw
+                </h3>
+
+                <p>
+                    Three-wheeler driving training.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= SCOOTY ================= -->
+
+        <div class="vehicle-card">
+
+
+            <div class="vehicle-image">
+
+                <img
+                    src="images/scooty.jpg"
+                    alt="Scooty Driving Training"
+                    loading="lazy">
+
+            </div>
+
+
+            <div class="vehicle-info">
+
+                <span>2 WHEELER</span>
+
+                <h3>
+                    Scooty
+                </h3>
+
+                <p>
+                    Two-wheeler training
+                    for beginners.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRAINING PROCESS
+===================================================== -->
+
+<section class="section process-section">
+
+
+    <div class="section-heading">
+
+        <span>HOW IT WORKS</span>
+
+        <h2>
+            Your Journey To
+            <strong>Confident Driving</strong>
+        </h2>
+
+    </div>
+
+
+
+    <div class="process">
+
+
+        <div class="process-item">
+
+            <div class="process-number">
+                01
+            </div>
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            <h3>
+                Registration
+            </h3>
+
+            <p>
+                Select your preferred driving
+                course and register with us.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-item">
+
+            <div class="process-number">
+                02
+            </div>
+
+            <i class="fa-solid fa-person-chalkboard"></i>
+
+            <h3>
+                Theory Classes
+            </h3>
+
+            <p>
+                Attend 2 theory lectures and
+                understand traffic rules and
+                road safety.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-item">
+
+            <div class="process-number">
+                03
+            </div>
+
+            <i class="fa-solid fa-car-side"></i>
+
+            <h3>
+                Practical Training
+            </h3>
+
+            <p>
+                Get practical training during
+                the 20-day course.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-item">
+
+            <div class="process-number">
+                04
+            </div>
+
+            <i class="fa-solid fa-id-card"></i>
+
+            <h3>
+                RTO Preparation
+            </h3>
+
+            <p>
+                Prepare for your RTO test with
+                proper guidance.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about" class="about-section">
+
+
+    <div class="about-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1400&q=85"
+            alt="Driving training"
+            loading="lazy">
+
+
+        <div class="experience-box">
+
+            <strong>20</strong>
+
+            <span>
+                DAYS<br>
+                COURSE
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="about-content">
+
+
+        <span class="red-title">
+            WHY SHETALL DRIVING SCHOOL?
+        </span>
+
+
+        <h2>
+
+            Learn Driving The
+            <strong>Right Way</strong>
+
+        </h2>
+
+
+        <p>
+
+            Shetall Driving School, Baramati provides
+            structured driving training for beginners
+            and learners who want to become confident
+            and responsible drivers.
+
+        </p>
+
+
+        <p>
+
+            Our course combines practical driving
+            sessions, theory lectures and RTO test
+            preparation to give learners a complete
+            training experience.
+
+        </p>
+
+
+
+        <div class="about-points">
+
+
+            <div>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <h4>
+                        Safety First
+                    </h4>
+
+                    <p>
+                        Focus on safe and responsible driving.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <div>
+
+                    <h4>
+                        Beginner Friendly
+                    </h4>
+
+                    <p>
+                        Training designed for new learners.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <i class="fa-solid fa-road"></i>
+
+                <div>
+
+                    <h4>
+                        Practical Training
+                    </h4>
+
+                    <p>
+                        Learn real-world road driving skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RTO
+===================================================== -->
+
+<section class="rto-section">
+
+
+    <div class="rto-content">
+
+
+        <div class="rto-icon">
+
+            <i class="fa-solid fa-id-card"></i>
+
+        </div>
+
+
+
+        <div>
+
+            <span>
+                COMPLETE GUIDANCE
+            </span>
+
+            <h2>
+
+                Get Ready For Your
+                <strong>RTO Test</strong>
+
+            </h2>
+
+            <p>
+
+                Understand traffic signs, road rules
+                and important RTO test concepts with
+                our theory sessions and preparation
+                guidance.
+
+            </p>
+
+        </div>
+
+
+
+        <a
+            href="tel:9689863144"
+            class="btn white-btn">
+
+            Contact Us
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact" class="section contact-section">
+
+
+    <div class="section-heading">
+
+        <span>GET IN TOUCH</span>
+
+        <h2>
+            Contact <strong>Shetall Driving School</strong>
+        </h2>
+
+        <p>
+            Ready to start learning? Contact us today.
+        </p>
+
+    </div>
+
+
+
+    <div class="contact-grid">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Our Address
+                    </h3>
+
+                    <p>
+
+                        Market Yard Road,<br>
+                        Near Ahilyamatan Shop,<br>
+                        Shivdatta Apartment,<br>
+                        Desai Estate, Baramati
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Call Us
+                    </h3>
+
+                    <a href="tel:9689863144">
+
+                        9689863144
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+                    <a
+                        href="https://wa.me/919689863144"
+                        target="_blank"
+                        rel="noopener">
+
+                        Chat With Us
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- GOOGLE MAP -->
+
+        <div class="map-container">
+
+            <iframe
+                src="https://www.google.com/maps?q=Market%20Yard%20Road%2C%20Near%20Ahilyamatan%20Shop%2C%20Shivdatta%20Apartment%2C%20Desai%20Estate%2C%20Baramati&output=embed"
+                loading="lazy"
+                allowfullscreen
+                title="Shetall Driving School Location">
+            </iframe>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEEDBACK
+===================================================== -->
+
+<section id="feedback" class="feedback-section">
+
+
+    <div class="feedback-container">
+
+
+        <div class="section-heading light">
+
+            <span>
+                YOUR OPINION MATTERS
+            </span>
+
+            <h2>
+                Give Us Your <strong>Feedback</strong>
+            </h2>
+
+            <p>
+                Tell us about your experience
+                at Shetall Driving School.
+            </p>
+
+        </div>
+
+
+
+        <form
+            id="feedbackForm"
+            class="feedback-form">
+
+
+            <!-- NAME + PHONE -->
+
+            <div class="form-row">
+
+
+                <div class="input-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required>
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter phone number"
+                        required>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RATING -->
+
+            <div class="rating-box">
+
+                <label>
+                    Rate Your Experience
+                </label>
+
+
+                <div class="stars">
+
+
+                    <input
+                        type="radio"
+                        id="star5"
+                        name="rating"
+                        value="5">
+
+                    <label for="star5">
+                        ★
+                    </label>
+
+
+
+                    <input
+                        type="radio"
+                        id="star4"
+                        name="rating"
+                        value="4">
+
+                    <label for="star4">
+                        ★
+                    </label>
+
+
+
+                    <input
+                        type="radio"
+                        id="star3"
+                        name="rating"
+                        value="3">
+
+                    <label for="star3">
+                        ★
+                    </label>
+
+
+
+                    <input
+                        type="radio"
+                        id="star2"
+                        name="rating"
+                        value="2">
+
+                    <label for="star2">
+                        ★
+                    </label>
+
+
+
+                    <input
+                        type="radio"
+                        id="star1"
+                        name="rating"
+                        value="1">
+
+                    <label for="star1">
+                        ★
+                    </label>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FEEDBACK -->
+
+            <div class="input-group">
+
+                <label for="feedback">
+                    Your Feedback
+                </label>
+
+                <textarea
+                    id="feedback"
+                    rows="5"
+                    placeholder="Write your feedback..."
+                    required></textarea>
+
+            </div>
+
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Submit Feedback
+
+            </button>
+
+
+            <div id="feedbackMessage"></div>
+
+
+        </form>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-<h2>Shetall Driving School</h2>
 
-<p>📍 Market Yard, Baramati</p>
+    <div class="footer-main">
 
-<p>📞 9850905091</p>
 
-<p>Drive Safe • Drive Smart • Drive Confidently</p>
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+
+            <div class="logo">
+
+                <span class="logo-icon">
+
+                    <i class="fa-solid fa-car"></i>
+
+                </span>
+
+
+                <div>
+
+                    <h2>
+                        SHETALL
+                    </h2>
+
+                    <small>
+                        DRIVING SCHOOL
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                Learn to drive safely.<br>
+                Drive with confidence.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-links">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="#vehicles">
+                Vehicles
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-contact">
+
+            <h3>
+                Contact
+            </h3>
+
+
+            <p>
+
+                <i class="fa-solid fa-phone"></i>
+
+                9689863144
+
+            </p>
+
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Market Yard Road, Baramati
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+
+        <p>
+
+            © <span id="year"></span>
+
+            Shetall Driving School, Baramati.
+
+            All Rights Reserved.
+
+        </p>
+
+
+        <p>
+            Drive Safe • Stay Safe
+        </p>
+
+
+    </div>
+
 
 </footer>
 
-</body>
 
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+<a
+    href="https://wa.me/919689863144"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp"
+    aria-label="Chat on WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+<!-- =====================================================
+     FLOATING CALL
+===================================================== -->
+
+<a
+    href="tel:9689863144"
+    class="call-button"
+    aria-label="Call Shetall Driving School">
+
+    <i class="fa-solid fa-phone"></i>
+
+</a>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Hair Artistry | Salon & Styling</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root { --ink:#25201e; --muted:#756b67; --cream:#f8f3ee; --rose:#c47f73; --line:#e8ddd5; --white:#fffdfb; }
+		* { box-sizing:border-box; margin:0; padding:0; }
+		body { color:var(--ink); background:var(--white); font-family:'DM Sans',sans-serif; line-height:1.6; }
+		a { color:inherit; text-decoration:none; }
+		.container { width:min(1120px,90%); margin:auto; }
+		header { position:absolute; z-index:2; width:100%; color:#fff; }
+		nav { display:flex; justify-content:space-between; align-items:center; padding:27px 0; }
+		.logo { font-family:'Playfair Display',serif; font-size:1.55rem; letter-spacing:.04em; }
+		.logo span { color:#f3c2b7; }
+		.nav-links { display:flex; gap:30px; list-style:none; font-size:.88rem; }
+		.nav-links a:hover { color:#f3c2b7; }
+		.button { display:inline-block; border:1px solid var(--rose); background:var(--rose); color:white; padding:13px 25px; border-radius:2px; font-weight:600; font-size:.84rem; letter-spacing:.03em; transition:.2s; }
+		.button:hover { background:#a9675d; border-color:#a9675d; transform:translateY(-2px); }
+		.hero { min-height:680px; display:flex; align-items:center; color:#fff; background:linear-gradient(90deg,rgba(31,22,20,.82),rgba(31,22,20,.18)),url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1800&q=85') center/cover; }
+		.hero-content { max-width:600px; padding-top:50px; }
+		.eyebrow { color:#d99d91; text-transform:uppercase; font-size:.74rem; letter-spacing:.2em; font-weight:700; margin-bottom:18px; }
+		h1,h2,h3 { font-family:'Playfair Display',serif; font-weight:600; line-height:1.12; }
+		h1 { font-size:clamp(3rem,7vw,5.6rem); margin-bottom:20px; }
+		.hero p { max-width:480px; color:#f2e8e3; font-size:1.08rem; margin-bottom:30px; }
+		.section { padding:95px 0; }
+		.section-heading { text-align:center; max-width:620px; margin:0 auto 48px; }
+		h2 { font-size:clamp(2.1rem,4vw,3.1rem); margin-bottom:15px; }
+		.section-heading p, .about p { color:var(--muted); }
+		.services { background:var(--cream); }
+		.service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+		.service-card { background:var(--white); padding:29px; border:1px solid var(--line); position:relative; }
+		.service-card:hover { box-shadow:0 12px 30px rgba(75,45,35,.09); }
+		.service-card h3 { font-size:1.45rem; margin-bottom:9px; }
+		.service-card p { color:var(--muted); font-size:.91rem; min-height:72px; }
+		.price { color:var(--rose); font-size:1.3rem; font-weight:700; margin-top:18px; }
+		.duration { color:#998d87; font-size:.78rem; margin-left:8px; font-weight:400; }
+		.about { display:grid; grid-template-columns:1fr 1fr; gap:75px; align-items:center; }
+		.about-image { height:460px; background:url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85') center/cover; }
+		.about-copy h2 { margin-bottom:20px; }
+		.about-copy p { margin-bottom:22px; }
+		.details { display:flex; gap:35px; margin-top:28px; }
+		.details strong { display:block; color:var(--rose); font-family:'Playfair Display'; font-size:1.65rem; }
+		.details span { color:var(--muted); font-size:.82rem; }
+		.booking { background:var(--ink); color:white; text-align:center; padding:78px 0; }
+		.booking h2 { margin-bottom:14px; }
+		.booking p { color:#d4c8c2; margin-bottom:28px; }
+		footer { background:#1d1918; color:#bdb1ab; padding:25px 0; font-size:.8rem; }
+		.footer-inner { display:flex; justify-content:space-between; gap:15px; }
+		@media (max-width:750px) { .nav-links { display:none; } .hero { min-height:600px; } .service-grid,.about { grid-template-columns:1fr; } .about { gap:35px; } .about-image { height:320px; order:2; } .section { padding:65px 0; } .footer-inner { flex-direction:column; } }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<nav>
+				<a class="logo" href="#top">The Hair <span>Artistry</span></a>
+				<ul class="nav-links"><li><a href="#services">Services</a></li><li><a href="#about">Our Story</a></li><li><a href="#contact">Contact</a></li></ul>
+				<a class="button" href="#contact">Book an Appointment</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="top">
+		<section class="hero"><div class="container hero-content"><div class="eyebrow">Where style becomes art</div><h1>Your hair.<br>Our artistry.</h1><p>Personalized cuts, effortless color, and beautiful hair designed just for you.</p><a class="button" href="#services">Explore our services</a></div></section>
+
+		<section class="section services" id="services">
+			<div class="container"><div class="section-heading"><div class="eyebrow">Curated for you</div><h2>Haircut & styling menu</h2><p>Every appointment begins with a thoughtful consultation and ends with hair you love to wear.</p></div>
+				<div class="service-grid">
+					<article class="service-card"><h3>The Signature Cut</h3><p>A tailored cut, wash, relaxing scalp massage, and signature blow-dry finish.</p><div class="price">$75 <span class="duration">60 min</span></div></article>
+					<article class="service-card"><h3>Express Cut</h3><p>A polished dry cut for guests who know exactly what they want.</p><div class="price">$50 <span class="duration">30 min</span></div></article>
+					<article class="service-card"><h3>Restyle & Transform</h3><p>A full consultation and dramatic change, shaped to complement your features.</p><div class="price">$95 <span class="duration">90 min</span></div></article>
+					<article class="service-card"><h3>Blowout</h3><p>Volume, smoothness, or waves—enjoy a professional finish that lasts.</p><div class="price">$45 <span class="duration">45 min</span></div></article>
+					<article class="service-card"><h3>Event Styling</h3><p>Elegant updos and modern styling for celebrations, photos, and special days.</p><div class="price">$90 <span class="duration">60 min</span></div></article>
+					<article class="service-card"><h3>Bang Trim</h3><p>A quick refresh to keep your fringe perfectly shaped between appointments.</p><div class="price">$20 <span class="duration">15 min</span></div></article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="about"><div class="container about"><div class="about-image"></div><div class="about-copy"><div class="eyebrow">Meet your stylists</div><h2>Beauty, with a personal touch.</h2><p>At The Hair Artistry, we believe the best hair is hair that feels like you. Our team combines modern technique with genuine care to create a calm, welcoming experience every time.</p><p>Come in for the conversation, stay for the confidence.</p><a class="button" href="#contact">Meet the team</a><div class="details"><div><strong>12+</strong><span>Years of artistry</span></div><div><strong>4.9</strong><span>Client rating</span></div></div></div></div></section>
+
+		<section class="booking" id="contact"><div class="container"><div class="eyebrow">Ready for your refresh?</div><h2>Let’s create something beautiful.</h2><p>Call us at (555) 014-7284 or visit us at 24 Willow Lane, your city.</p><a class="button" href="mailto:hello@thehairartistry.com">Book your appointment</a></div></section>
+	</main>
+	<footer><div class="container footer-inner"><span>© 2024 The Hair Artistry</span><span>Instagram &nbsp;·&nbsp; hello@thehairartistry.com</span></div></footer>
+</body>
+</html>
